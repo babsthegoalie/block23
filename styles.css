@@ -1,0 +1,138 @@
+#new-player-form {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+input {
+    margin: 10px;
+}
+
+
+#all-players-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 100%;
+}
+
+
+/* Base styles for player cards */
+.parent {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: fit-content;
+  }
+  
+  /* Individual player card style */
+  .child {
+  margin: 50px;
+  box-sizing: border-box;
+  text-align: left;
+  height: fit-content;
+ 
+  }
+  
+  /* Player card content styles */
+  .player-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #ccc; /* Adding a border for visualization */
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  /* Player image styles */
+  .player-image {
+    width: 200px; /* Adjust as needed */
+    height: 200px; /* Maintain aspect ratio */
+    object-fit: cover; /* Maintain image aspect ratio */
+    border-radius: 5%;
+    margin-bottom: 10px;
+  }
+  
+  /* Player name styles */
+  h2 {
+    font-size: 18px;
+    margin: 0;
+  }
+
+  button {
+    padding: 10px 10px;
+  }
+
+
+  /* form */
+#new-player-form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 35px;
+    padding: 10px;
+
+}
+
+.form-input {
+    width: 100%;
+    padding: 5px;
+    margin: 10px;
+    box-sizing: border-box;
+}
+
+.form-submit {
+    width: 100%;
+    padding: 8px;
+    margin-top: 10px;
+    background-color: #e8d16e;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.form-submit:hover {
+    background-color: #ffc107;
+}
+
+/* Details and Delete button styles */
+
+.custom-button {
+  margin: 10px 0px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.details-button.custom-button,
+.remove-button.custom-button {
+  width: 100%;
+  border: none;
+}
+
+.details-button.custom-button {
+    background-color: #e8d16e;
+    color: rgb(0, 0, 0);
+
+}
+
+.details-button:hover {
+    background-color: #ffc107;
+}
+
+
+.remove-button.custom-button {
+  background-color: #a73d31;
+  color: white;
+}
+
+
+.remove-button:hover {
+    background-color: #68322c;
+}
