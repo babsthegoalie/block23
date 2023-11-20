@@ -1,9 +1,10 @@
+// Define variables to hold HTML elements and API endpoint
 const playerContainer = document.getElementById('all-players-container');
 const newPlayerFormContainer = document.getElementById('new-player-form');
-
 const cohortName = '2306-FTB-MT-WEB-PT';
 const APIURL = `https://fsa-puppy-bowl.herokuapp.com/api/${cohortName}/`;
 
+// Function to fetch all players from the API
 const fetchAllPlayers = async () => {
     try {
         const response = await fetch(APIURL + 'players');
@@ -25,6 +26,7 @@ const fetchAllPlayers = async () => {
     }
 };
 
+// Function to fetch a single player by ID from the API
 const fetchSinglePlayer = async (playerId) => {
     try {
         const response = await fetch(APIURL + `players/${playerId}`);
@@ -40,6 +42,7 @@ const fetchSinglePlayer = async (playerId) => {
     }
 };
 
+// Function to render player details in the DOM
 const renderPlayerDetails = (playerId, playerDetails) => {
     const playerCard = document.getElementById(`player-${playerId}`);
     const existingDetails = playerCard.querySelector('.player-details');
@@ -65,7 +68,7 @@ const renderPlayerDetails = (playerId, playerDetails) => {
     }
 };
 
-
+// Function to remove a player from the roster
 const removePlayer = async (playerId) => {
     try {
         const response = await fetch(APIURL + `players/${playerId}`, {
@@ -81,6 +84,7 @@ const removePlayer = async (playerId) => {
     }
 };
 
+// Function to render all players in the DOM
 const renderAllPlayers = async () => {
     try {
         const players = await fetchAllPlayers();
@@ -112,6 +116,7 @@ const renderAllPlayers = async () => {
     }
 };
 
+// Function to render the new player form
 const renderNewPlayerForm = () => {
     try {
         const formHTML = `
@@ -157,6 +162,7 @@ const renderNewPlayerForm = () => {
     }
 };
 
+// Function to add a new player to the roster
 const addNewPlayer = async (playerData) => {
     try {
         const response = await fetch(APIURL + 'players', {
@@ -179,10 +185,13 @@ const addNewPlayer = async (playerData) => {
     }
 };
 
+// Function to kick-start the application
 const init = () => {
 
+    // Render form and players
     renderNewPlayerForm();
     renderAllPlayers();
 };
 
+// Kick-start the application
 init();
